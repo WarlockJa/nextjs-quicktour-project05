@@ -1,0 +1,10 @@
+src/app/page.tsx
+revalidate = 0 has same effect as no-cache
+
+router.refresh() - revalidates data on the route. But when we're on the different route the data is not refreshed for the other routes.
+We can specify to not prefetch data for the affected routes, this way it will be fetched every time.
+setting no-prefetch src/app/components/NavBat.tsx (which of course doesn't work, so I added router.refresh() in AddTodo.tsx on submit form instead)
+
+soft vs hard navigation. Soft - cache persists. Hard - cache invalidated.
+
+All these things are fairly new/unstable. Check before you wreck.
